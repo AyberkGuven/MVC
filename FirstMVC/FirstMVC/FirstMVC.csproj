@@ -128,10 +128,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\shared\_istekLayout.cshtml" />
     <Content Include="Views\Istek\Index.cshtml" />
-    <Content Include="Views\Istek\Update.cshtml" />
     <Content Include="Views\Istek\Create.cshtml" />
     <Content Include="Views\shared\_menuBar.cshtml" />
     <Content Include="Views\shared\_footerBar.cshtml" />
+    <Content Include="Views\Istek\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
