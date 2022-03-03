@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_StudentFollowLayout</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/myStyle.css" rel="stylesheet"/>
+    @*<link rel="icon" href="~/" type="image/x-icon">*@
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div>
+        @Html.Partial("_MenuBar")
+    </div>
+    <div> 
+        @RenderBody()
+    </div>
+    <div>
+        @Html.Partial("_FooterBar")
+    </div>
+</body>
+</html>

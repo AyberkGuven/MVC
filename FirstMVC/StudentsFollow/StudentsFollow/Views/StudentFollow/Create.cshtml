@@ -1,0 +1,88 @@
+﻿@model StudentsFollow.ViewModel.CreatDataViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_StudentFollowLayout.cshtml";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "StudentFollow", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="mb-3 mt-3">
+        <label for="Resminiz" class="form-label">Resminiz</label>
+        @*<input type="file" class="form-control" id="file" name="file"/>*@
+        @Html.TextBox("file", "", new { type = "file", @class = "form-control" })
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="T.C." class="form-label">T.C.</label>
+        @Html.TextBoxFor(m => m.CreatStudentViewModels.Id, new { @class = "form-control", @placeholder = "T.C. Giriniz" })
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Name" class="form-label">Name</label>
+        @Html.TextBoxFor(m => m.CreatStudentViewModels.Name, new { @class = "form-control", @placeholder = "Adınızı Giriniz" })
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Surname" class="form-label">Surname</label>
+        @Html.TextBoxFor(m => m.CreatStudentViewModels.Surname, new { @class = "form-control", @placeholder = "Soyadınızı Giriniz" })
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Genders" class="form-label">Genders</label>
+        @Html.DropDownListFor(m => m.CreatStudentViewModels.Genders, new List<SelectListItem>
+        {
+            new SelectListItem{Text="Kadın", Value="False"},
+            new SelectListItem{Text="Erkek", Value="True"}
+        }, new { @class = "form-control" }
+        )
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Sınıfı" class="form-label">Sınıfı</label>
+        @Html.DropDownListFor(model => model.CreatStudentViewModels.ClassRoomId, new SelectList(Model.classRoomViewModels, "ClassRoomId", "Name"), new { @class = "form-control" })
+    </div><br />
+    <div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+}
+@*<form>
+    <div class="mb-3 mt-3">
+        <label for="Resminiz" class="form-label">Resminiz</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        <input type="file" class="form-control" name="filename">
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="T.C." class="form-label">T.C.</label>
+        <input type="text" class="form-control" id="T.C." placeholder="T.C. Kimlinizi giriniz" name="T.C.">
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Adı" class="form-label">Adı</label>
+        <input type="text" class="form-control" id="Adı" placeholder="Adınızı giriniz" name="Adı">
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Soyadı" class="form-label">Soyadı</label>
+        <input type="text" class="form-control" id="Soyadı" placeholder="Soyadınızı giriniz" name="Soyadı">
+    </div>
+    <div>
+        <label for="Cinsiyet" class="form-label">Cinsiyet</label>
+        <select class="form-control" id="Cinsiyetiniz" name="Cinsiyetiniz">
+            <option value="1">Kadın</option>
+            <option value="2">Erkek</option>
+        </select>
+    </div>
+    <div>
+        <label for="Sınıfı" class="form-label">Sınıfı</label>
+        @Html.DropDownListFor(model => model.CreatStudentViewModels.TC, new SelectList(Model.classRoomViewModels, "Id", "Name"), new { @class = "form-control"})
+        <select class="form-control" id="Sınıfı" name="Sınıfı">
+            <option value="1">Amp 9/V</option>
+            <option value="2">Amp 9/V</option>
+            <option value="3">Amp 10/V</option>
+            <option value="4">Amp 10/Y</option>
+            <option value="5">Amp 11/V</option>
+            <option value="6">Amp 11/Y</option>
+            <option value="7">Amp 12/V</option>
+            <option value="8">Amp 12/Y</option>
+        </select>
+    </div><br />
+    <div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>*@
+
+

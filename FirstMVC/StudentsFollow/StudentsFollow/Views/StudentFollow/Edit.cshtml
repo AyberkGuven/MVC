@@ -1,0 +1,44 @@
+﻿@model StudentsFollow.Context.StudentFollowDbContext
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_StudentFollowLayout.cshtml";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm(@*"Edit", "StudentFollow", FormMethod.Post, new { enctype = "multipart/form-data" }*@))
+{
+    <div class="mb-3 mt-3">
+        <label for="Resminiz" class="form-label">Resminiz</label>
+        @*<input type="file" class="form-control" id="file" name="file"/>*@
+        @Html.TextBox("file", "", new { type = "file", @class = "form-control" })
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="T.C." class="form-label">T.C.</label>
+        @Html.TextBoxFor(m => m.Students.Id, new { @class = "form-control", @placeholder = "T.C. Giriniz" })
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Name" class="form-label">Name</label>
+        @Html.TextBoxFor(m => m.Students.Name, new { @class = "form-control", @placeholder = "Adınızı Giriniz" })
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Surname" class="form-label">Surname</label>
+        @Html.TextBoxFor(m => m.Students.Surname, new { @class = "form-control", @placeholder = "Soyadınızı Giriniz" })
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Genders" class="form-label">Genders</label>
+        @Html.DropDownListFor(m => m.Students.Genders, new List<SelectListItem>
+        {
+            new SelectListItem{Text="Kadın", Value="False"},
+            new SelectListItem{Text="Erkek", Value="True"}
+        }, new { @class = "form-control" }
+        )
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="Sınıfı" class="form-label">Sınıfı</label>
+        @Html.DropDownListFor(model => model.Classrooms.ClassRoomId, new SelectList(Model.classRoomViewModels, "ClassRoomId", "Name"), new { @class = "form-control" })
+    </div><br />
+    <div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+}
+

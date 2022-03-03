@@ -1,0 +1,82 @@
+﻿@model IEnumerable<StudentsFollow.ViewModel.StudentViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentFollowLayout.cshtml";
+}
+
+<div>
+    <h2>Index</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Resmi</th>
+                <th>T.C.</th>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Cinsiyet</th>
+                <th>Sınıfı</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="~/Image/@item.ImagePatch" />
+                    </td>
+                    <td>
+                        @*26544521545*@
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @*John*@
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @*Doe*@
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @*Erkek*@
+                        @Html.DisplayFor(modelItem => item.Genders)
+                    </td>
+                    <td>
+                        @*11/V*@
+                        @Html.DisplayFor(modelItem => item.ClassRoomId)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "StudentFollow", new { id = item.Id }) |
+                        @Html.ActionLink("Sil", "Delete", "StudentFollow", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+            @*<tr>
+                    <td><img src="~/Image/circled-female-user-icon.fw.png"/></td>
+                    <td>85545545556</td>
+                    <td>July</td>
+                    <td>Doe</td>
+                    <td>Kadın</td>
+                    <td>11/V</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "StudentFollow") |
+                        @Html.ActionLink("Sil", "Delete", "StudentFollow")
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="~/Image/circled-male-user-icon.fw.png"/></td>
+                    <td>14568447544</td>
+                    <td>Mark</td>
+                    <td>Doe</td>
+                    <td>Erkek</td>
+                    <td>10/V</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "StudentFollow", new { @class=""}) |
+                        @Html.ActionLink("Sil", "Delete", "StudentFollow")
+                    </td>
+                </tr>*@
+        </tbody>
+    </table>
+</div>
+
