@@ -17,9 +17,8 @@ D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\bin\System.Web.W
 D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\bin\System.Web.Webpages.Razor.xml
 D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\bin\System.Web.Helpers.xml
 D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\bin\System.Web.Mvc.xml
-D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\obj\Debug\StudentsFollow.csprojResolveAssemblyReference.cache
 D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\obj\Debug\StudentsFollow.dll
 D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\obj\Debug\StudentsFollow.pdb
-D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\obj\Debug\StudentsFollow.Migrations.createDatabase.resources
+D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\obj\Debug\StudentsFollow.Migrations.StudentFollowDb1.resources
 D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\obj\Debug\StudentsFollow.csproj.GenerateResource.Cache
-D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\obj\Debug\StudentsFollow.Migrations.columnStudentsFollowsStudent.resources
+D:\Laboratuar\Ortak\OGR4\11-V\MVC\StudentsFollow\StudentsFollow\obj\Debug\StudentsFollow.csprojResolveAssemblyReference.cache
