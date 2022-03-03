@@ -1,0 +1,35 @@
+﻿@model FirstMVC.Models.Mesaj
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/shared/_istekLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Istek"))
+{
+    <div>
+        <label for="Adı" class="form-label">Adı</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div>
+        <label for="Soyadı" class="form-label">Soyadı</label>
+        @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
+    </div>
+    <div>
+        <label for="Telefon" class="form-label">Telefon</label>
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+    </div>
+    <div>
+        <label for="Email" class="form-label">Email</label>
+        @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+    </div>
+    <div>
+        <label for="Istek">Istek</label>
+        @Html.TextAreaFor(m => m.Request, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+}
+

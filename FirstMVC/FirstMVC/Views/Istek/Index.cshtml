@@ -1,0 +1,87 @@
+﻿@model IEnumerable<FirstMVC.Models.Mesaj>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_istekLayout.cshtml";
+}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ADI</th>
+                <th>SOYADI</th>
+                <th>TELEFON</th>
+                <th>E-posta</th>
+                <th>ISTEK</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+             <tr>
+                <td>@Html.DisplayFor(ModelItem => item.Id) </td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.Phone</td>
+                <td>@item.Mail</td>
+                <td>@item.Request</td>
+                 <td>
+                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                     @Html.ActionLink("Sil", "Delete", new { id=item.Id })
+                 </td>
+                @*<td>
+                    <a href="~/Istek/Update" class="btn btn-link">Edit</a>
+                    <a id="Del1" href="#" class="btn btn-link">Sil</a>
+                </td>*@
+            </tr>
+            }
+            @*<tr>
+                <td>2</td>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>123456789</td>
+                <td>mary@example.com</td>
+                <td>
+                    <a href="~/Istek/Update" class="btn btn-link">Edit</a>
+                    <a href="#" class="btn btn-link">Sil</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>123456789</td>
+                <td>july@example.com</td>
+                <td>
+                    <a href="~/Istek/Update" class="btn btn-link">Edit</a>
+                    <a href="#" class="btn btn-link">Sil</a>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>John</td>
+                <td>Dooley</td>
+                <td>123456789</td>
+                <td>john@example.com</td>
+                <td>
+                    <a href="~/Istek/Update" class="btn btn-link">Edit</a>
+                    <a href="#" class="btn btn-link">Sil</a>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>July</td>
+                <td>Moe</td>
+                <td>123456789</td>
+                <td>july@example.com</td>
+                <td>
+                    <a href="~/Istek/Update" class="btn btn-link">Edit</a>
+                    <a href="#" class="btn btn-link">Sil</a>
+                </td>
+            </tr>*@
+        </tbody>
+    </table>
+</div>
+

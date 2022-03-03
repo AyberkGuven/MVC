@@ -1,0 +1,62 @@
+﻿@model FirstMVC.Models.Mesaj
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/shared/_istekLayout.cshtml";
+}
+
+<h2>Yeni Kayıt</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <label for="Adı" class="form-label">Adı</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div>
+        <label for="Soyadı" class="form-label">Soyadı</label>
+        @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
+    </div>
+    <div>
+        <label for="Telefon" class="form-label">Telefon</label>
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+    </div>
+    <div>
+        <label for="Email" class="form-label">Email</label>
+        @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+    </div>
+    <div>
+        <label for="Istek">Istek</label>
+        @Html.TextAreaFor(m => m.Request, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+}
+
+
+@*<form class="form">
+    <div class="container-fluid">
+        <div>
+            <label for="Adı" class="form-label">Adı</label>
+            <input type="text" class="form-control" placeholder="Adınızı Giriniz" name="Adı" id="Adi" />
+        </div>
+        <div>
+            <label for="Soyadı" class="form-label">Soyadı</label>
+            <input type="text" class="form-control" placeholder="Soyadınızı Giriniz" name="Soyadı" id="Soyadı" />
+        </div>
+        <div>
+            <label for="Telefon" class="form-label">Telefon</label>
+            <input type="text" class="form-control" placeholder="Telefonunuzu Giriniz" name="Telefon" id="Telefon" />
+        </div>
+        <div>
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="Emailinizi Giriniz" name="Email" id="Email" />
+        </div>
+        <div>
+            <label for="Istek">Istek</label>
+            <textarea class="form-control" rows="5" id="Istek" name="Istek" placeholder="Isteğinizi Giriniz"></textarea>
+        </div>
+        <div>
+            <button class="btn btn-primary">Kaydet</button>
+        </div>
+    </div>
+</form>*@
