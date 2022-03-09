@@ -46,8 +46,8 @@
                         @Html.DisplayFor(modelItem => item.ClassRoomId)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", "StudentFollow", new { id = item.Id }) |
-                        @Html.ActionLink("Sil", "Delete", "StudentFollow", new { id = item.Id })
+                        @Html.ActionLink("Edit", "Edit", @*"StudentFollow",*@ new { id = item.Id }) |
+                        @Html.ActionLink("Sil", "Delete", @*"StudentFollow",*@ new { id = item.Id })
                     </td>
                 </tr>
             }

@@ -165,6 +165,8 @@
     <Compile Include="ViewModel\ClassRoomViewModel.cs" />
     <Compile Include="ViewModel\CreatDataViewModel.cs" />
     <Compile Include="ViewModel\CreatStudentViewModel.cs" />
+    <Compile Include="ViewModel\EditDataViewModel.cs" />
+    <Compile Include="ViewModel\EditStudentViewModel.cs" />
     <Compile Include="ViewModel\StudentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
