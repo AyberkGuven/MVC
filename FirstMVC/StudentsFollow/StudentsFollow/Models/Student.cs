@@ -18,6 +18,5 @@ namespace StudentsFollow.Models
         public string ImagePatch { get; set; }
         public byte ClassroomId { get; set; }
         public Classroom Classroom { get; set; }
-
     }
 }

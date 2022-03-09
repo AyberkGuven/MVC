@@ -52,7 +52,8 @@ namespace StudentsFollow.Controllers
         [HttpPost]
         public ActionResult Create(CreatDataViewModel mgData,HttpPostedFileBase file)
         {
-            string path = Path.Combine(Server.MapPath("~/Image"), Path.GetFileName(file.FileName));
+            string FileName = mgData.CreatStudentViewModels.Id + Path.GetExtension(file.FileName);
+            string path = Path.Combine(Server.MapPath("~/Image"),FileName);
             file.SaveAs(path);
             using (var db = new StudentFollowDbContext())
             {
@@ -62,32 +63,80 @@ namespace StudentsFollow.Controllers
                     Surname = mgData.CreatStudentViewModels.Surname,
                     Gender = mgData.CreatStudentViewModels.Genders,
                     ClassroomId = mgData.CreatStudentViewModels.ClassRoomId,
-                    ImagePatch = Path.GetFileName(file.FileName)
+                    ImagePatch = FileName
+                    //ImagePatch = Path.GetFileName(file.FileName)
                 };
                 db.Students.Add(Students);
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
         }
-        public ActionResult Edit(Student mgData)
+        public ActionResult Edit(string id)
         {
             using (var db = new StudentFollowDbContext())
             {
-                Student edit = new Student()
-                {
-                    Id = mgData.Id,
-                    Name = mgData.Name,
-                    Surname = mgData.Surname,
-                    Gender = mgData.Gender,
-                    ClassroomId = mgData.ClassroomId,
-                    ImagePatch = mgData.ImagePatch
-                };
+                var student = db.Students.Where(s => s.Id == id).FirstOrDefault();
+                EditDataViewModel edit = new EditDataViewModel();
+                edit.EditStudentViewModel = db.Students.Where(s => s.Id == id).Select(s => new EditStudentViewModel(){
+                    Id = s.Id,
+                    Name = s.Name,
+                    Surname = s.Surname,
+                    Gender = s.Gender,
+                    ClassRoomId = s.ClassroomId,
+                    ImagePatch = s.ImagePatch
+                }).FirstOrDefault();
+
+                edit.ClassRoomViewModel = db.Classrooms.Select(
+                    cl=>new ClassRoomViewModel()
+                    {
+                        ClassRoomId=cl.Id,
+                        Name=cl.Name
+                    }).ToList();
+
+                return View(edit);
             }
-            return RedirectToAction("Edit");
         }
-        public ActionResult Delete()
+        [HttpPost]
+        public ActionResult Edit(EditDataViewModel mgData, HttpPostedFileBase file)
         {
-            return View();
+            
+            using (var db = new StudentFollowDbContext())
+            {
+
+                    var student = db.Students.Find(mgData.EditStudentViewModel.Id);
+                    student.Name = mgData.EditStudentViewModel.Name;
+                    student.Surname = mgData.EditStudentViewModel.Surname;
+                    student.Gender = mgData.EditStudentViewModel.Gender;
+                    student.ClassroomId = mgData.EditStudentViewModel.ClassRoomId;
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        string FileName = mgData.EditStudentViewModel.Id + Path.GetExtension(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/Image"), FileName);
+                        file.SaveAs(path);
+                        student.ImagePatch = file.FileName;
+                        }
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+        public ActionResult Delete(string id)
+        {
+            using (var db = new StudentFollowDbContext())
+            {
+                
+                var student = db.Students.Find(id);
+                db.Students.Remove(student);
+                db.SaveChanges();
+                
+                var fullPatch = Server.MapPath("~/Image/" + student.ImagePatch);
+
+                if (System.IO.File.Exists(fullPatch))
+                {
+                    System.IO.File.Delete(fullPatch);
+                }
+                return RedirectToAction("Index");
+            }
+
         }
 	}
 }
