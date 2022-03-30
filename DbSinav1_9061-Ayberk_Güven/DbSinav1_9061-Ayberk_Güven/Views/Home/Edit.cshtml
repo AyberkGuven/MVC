@@ -1,0 +1,31 @@
+﻿@model DbSinav1_9061_Ayberk_Güven.ViewModel.CreatDataViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<section class="arrival_section">
+    <div class="container">
+        <div class="box">
+            <div class="arrival_bg_box">
+                <img src="~/images/@Model.DetailsViewModel.Image" alt="">
+            </div>
+            <div class="row">
+                <div class="col-md-6 ml-auto">
+                    <a href="">
+                        @Model.DetailViewModel.Genders
+                    </a>
+                    <div class="heading_container remove_line_bt">
+                        <h2>
+                            @Model.DetailsViewModel.Name
+                        </h2>
+                    </div>
+                    <p style="margin-top: 20px;margin-bottom: 30px;">
+                        @Model.DetailsViewModel.Direction
+                    </p>
+                    <h3>$@Model.DetailsViewModel.Price</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
