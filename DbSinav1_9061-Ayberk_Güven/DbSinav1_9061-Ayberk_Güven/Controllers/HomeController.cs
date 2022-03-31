@@ -22,7 +22,7 @@ namespace DbSinav1_9061_Ayberk_Güven.Controllers
             {
                 var data = (from s in db.Productss
                             join cl in db.Detailss
-                            on s.DetailsId equals cl.DetailId
+                            on s.DetailsId equals cl.Id
                             select new ProductsViewModel()
                             {
                                 Image = s.Image,
@@ -47,16 +47,11 @@ namespace DbSinav1_9061_Ayberk_Güven.Controllers
                     Price = s.Price,
                     Direction = s.Direction,
                     Image = s.Image,
-                    DetalsId = s.DetailsId
+                    Genders = s.DetailsId == 1 ? "Erkek": "Kadın"
                 }).FirstOrDefault();
 
-                edit.DetailViewModel = db.Detailss.Select(
-                    cl => new DetailViewModel()
-                    {
-                        DetalsId = cl.DetailId,
-                        Genders = cl.Genders == false ? "Kadın" : "Erkek"
-                    }).FirstOrDefault();
-
+                // 1 men's shirt 12 asdsd p.png 2
+                
                 return View(edit);
             }
         }
