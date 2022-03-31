@@ -138,21 +138,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203230805544_9061Sinav.cs" />
-    <Compile Include="Migrations\202203230805544_9061Sinav.Designer.cs">
-      <DependentUpon>202203230805544_9061Sinav.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203231426026_add-Migration 9061Sinav.cs" />
-    <Compile Include="Migrations\202203231426026_add-Migration 9061Sinav.Designer.cs">
-      <DependentUpon>202203231426026_add-Migration 9061Sinav.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203300727441_DetaillId.cs" />
-    <Compile Include="Migrations\202203300727441_DetaillId.Designer.cs">
-      <DependentUpon>202203300727441_DetaillId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203300829440_newColumn.cs" />
-    <Compile Include="Migrations\202203300829440_newColumn.Designer.cs">
-      <DependentUpon>202203300829440_newColumn.cs</DependentUpon>
+    <Compile Include="Migrations\202203311231472_SinavDb.cs" />
+    <Compile Include="Migrations\202203311231472_SinavDb.Designer.cs">
+      <DependentUpon>202203311231472_SinavDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Details.cs" />
@@ -178,17 +166,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203230805544_9061Sinav.resx">
-      <DependentUpon>202203230805544_9061Sinav.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203231426026_add-Migration 9061Sinav.resx">
-      <DependentUpon>202203231426026_add-Migration 9061Sinav.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203300727441_DetaillId.resx">
-      <DependentUpon>202203300727441_DetaillId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203300829440_newColumn.resx">
-      <DependentUpon>202203300829440_newColumn.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203311231472_SinavDb.resx">
+      <DependentUpon>202203311231472_SinavDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

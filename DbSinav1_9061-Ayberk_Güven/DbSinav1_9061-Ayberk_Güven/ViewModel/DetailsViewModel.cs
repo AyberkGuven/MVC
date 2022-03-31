@@ -12,6 +12,6 @@ namespace DbSinav1_9061_Ayberk_Güven.ViewModel
         public string Image { get; set; }
         public decimal Price { get; set; }
         public string Direction { get; set; }
-        public int DetalsId { get; set; }
+        public string Genders { get; set; }
     }
 }
