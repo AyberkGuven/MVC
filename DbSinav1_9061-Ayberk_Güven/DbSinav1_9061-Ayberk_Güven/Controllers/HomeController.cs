@@ -63,7 +63,7 @@ namespace DbSinav1_9061_Ayberk_Güven.Controllers
         [HttpPost]
         public ActionResult Edit(DetailsViewModel mgData, HttpPostedFileBase file, int id) 
         {
-
+            
             using (var db = new SinavDbContext())
             {
                 if (mgData.Delete)
@@ -82,6 +82,10 @@ namespace DbSinav1_9061_Ayberk_Güven.Controllers
                 }
                 else
                 {
+                    //Uniq dosya ismi üretildi
+                    Guid g = Guid.NewGuid();
+                    string uniq = g.ToString("D");
+
                     //update işlemi
                     var Products = db.Productss.Find(mgData.Id);
                     Products.Name = mgData.Name;
@@ -90,10 +94,10 @@ namespace DbSinav1_9061_Ayberk_Güven.Controllers
                     Products.Price = mgData.Price;
                     if (file != null && file.ContentLength > 0)
                     {
-                        string FileName = mgData.Id + Path.GetExtension(file.FileName);
-                        string path = Path.Combine(Server.MapPath("~/images"), FileName);
+                        string fileName = uniq + Path.GetExtension(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/images"), fileName);
                         file.SaveAs(path);
-                        Products.Image = file.FileName;
+                        Products.Image = fileName;
                     }
                     db.SaveChanges();
                 }
@@ -110,16 +114,18 @@ namespace DbSinav1_9061_Ayberk_Güven.Controllers
         [HttpPost]
         public ActionResult Create(DetailsViewModel mgData, HttpPostedFileBase file) 
         {
-            string FileName = mgData.Id + Path.GetExtension(file.FileName);
-            string path = Path.Combine(Server.MapPath("~/images"), FileName);
+            Guid g = Guid.NewGuid();
+
+            string fileName = g + Path.GetExtension(file.FileName);
+            string path = Path.Combine(Server.MapPath("~/images"), fileName);
             file.SaveAs(path);
-           
+
             using (var db = new SinavDbContext())
             {
                 Products newData = new Products();
                 newData.Name = mgData.Name;
                 newData.Price = mgData.Price;
-                newData.Image = FileName;
+                newData.Image = fileName;
                 newData.Direction = mgData.Direction;
                 newData.DetailsId = mgData.DetailsId;
                 db.Productss.Add(newData);
