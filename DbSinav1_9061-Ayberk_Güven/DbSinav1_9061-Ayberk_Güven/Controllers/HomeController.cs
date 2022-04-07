@@ -92,7 +92,7 @@ namespace DbSinav1_9061_Ayberk_Güven.Controllers
                     Products.Direction = mgData.Direction;
                     Products.DetailsId = mgData.DetailsId;
                     Products.Price = mgData.Price;
-                    if (file != null && file.ContentLength > 0)
+                    if (file != null && file.ContentLength > 0 || uniq.ToLower() == ".png" || uniq.ToLower() == ".jpg")
                     {
                         string fileName = uniq + Path.GetExtension(file.FileName);
                         string path = Path.Combine(Server.MapPath("~/images"), fileName);
@@ -115,18 +115,21 @@ namespace DbSinav1_9061_Ayberk_Güven.Controllers
         public ActionResult Create(DetailsViewModel mgData, HttpPostedFileBase file) 
         {
             Guid g = Guid.NewGuid();
-
-            string fileName = g + Path.GetExtension(file.FileName);
-            string path = Path.Combine(Server.MapPath("~/images"), fileName);
-            file.SaveAs(path);
-
+            string uniq = g.ToString("D");
+            
             using (var db = new SinavDbContext())
             {
                 Products newData = new Products();
                 newData.Name = mgData.Name;
                 newData.Price = mgData.Price;
-                newData.Image = fileName;
                 newData.Direction = mgData.Direction;
+                if (uniq.ToLower() == ".png" || uniq.ToLower() == ".jpg")
+                {
+                    string fileName = uniq + Path.GetExtension(file.FileName);
+                    string path = Path.Combine(Server.MapPath("~/images"), fileName);
+                    file.SaveAs(path);
+                    newData.Image = fileName;
+                }
                 newData.DetailsId = mgData.DetailsId;
                 db.Productss.Add(newData);
                 db.SaveChanges();
