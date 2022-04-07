@@ -5,6 +5,8 @@
 }
 
 <section class="product_section layout_padding">
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     <div class="container">
         <div class="heading_container heading_center">
             <h2>
@@ -44,5 +46,6 @@
             </div>
         </div>
     </div>
+}
 </section>
 

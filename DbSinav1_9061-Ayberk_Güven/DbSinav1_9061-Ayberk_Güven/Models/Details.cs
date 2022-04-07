@@ -12,7 +12,7 @@ namespace DbSinav1_9061_Ayberk_Güven.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public bool Genders { get; set; }
+        public string Genders { get; set; }
         public ICollection<Products> Products { get; set; }
     }
 }

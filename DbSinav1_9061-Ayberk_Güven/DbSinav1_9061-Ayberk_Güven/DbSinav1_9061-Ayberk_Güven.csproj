@@ -138,23 +138,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203311231472_SinavDb.cs" />
-    <Compile Include="Migrations\202203311231472_SinavDb.Designer.cs">
-      <DependentUpon>202203311231472_SinavDb.cs</DependentUpon>
+    <Compile Include="Migrations\202204011303499_Hello.cs" />
+    <Compile Include="Migrations\202204011303499_Hello.Designer.cs">
+      <DependentUpon>202204011303499_Hello.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Details.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\CreatDataViewModel.cs" />
     <Compile Include="ViewModel\DetailsViewModel.cs" />
-    <Compile Include="ViewModel\DetailViewModel.cs" />
     <Compile Include="ViewModel\ProductsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,8 +165,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203311231472_SinavDb.resx">
-      <DependentUpon>202203311231472_SinavDb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204011303499_Hello.resx">
+      <DependentUpon>202204011303499_Hello.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

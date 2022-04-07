@@ -1,0 +1,48 @@
+﻿@model DbSinav1_9061_Ayberk_Güven.ViewModel.DetailsViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<div class="container mt-3">
+    @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <h2>Stacked form</h2>
+        <div class="mb-3 mt-3">
+            <label for="Iamge">Image:</label>
+            @Html.TextBox("file", "", new { type = "file", @class = "form-control" })
+            @*<input type="text" class="form-control" id="Image" placeholder="Enter Image" name="Image">*@
+        </div>
+        <div class="mb-3">
+            <label for="Genders">Genders:</label>
+            @*@Html.DropDownListFor(m => m.DetailsId, new SelectList(Model., "Id", "Genders"), new { @class = "form-control form-select" })*@
+            @Html.DropDownListFor(m => m.DetailsId, new List<SelectListItem>
+                 {
+                     new SelectListItem{Text="Kadın", Value="1"},
+                     new SelectListItem{Text="Erkek", Value="2"}
+                 }, new { @class = "form-control form-select" }
+                 )
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="Name">Name:</label>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Adınızı Giriniz" })
+            @*<input type="text" class="form-control" id="Name" placeholder="Enter Name" name="Name">*@
+        </div>
+        <div class="mb-3">
+            <label for="Direction">Direction:</label>
+            @Html.TextAreaFor(m => m.Direction, new { @class = "form-control", @placeholder = "Açıklamanızı Giriniz" })
+            @*<textarea class="form-control" rows="5" id="Direction" name="Direction"></textarea>*@
+        </div>
+        <div class="mb-3">
+            <label for="Price">Price:</label>
+            @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @placeholder = "Fiyatını Giriniz" })
+            @*<input type="text" class="form-control" id="Price" placeholder="Enter Price" name="Price">*@
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+            @*@Html.ActionLink("Kaydet", "Create", new { @class = "btn btn-primary" }, new { id = Model.Id })*@
+        </div>
+    }
+</div>
