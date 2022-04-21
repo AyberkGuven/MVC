@@ -1,0 +1,95 @@
+﻿@model Shop1.ViewModel.DataViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <div class="sidebar">
+        <div class="latest-product ">
+            <h2>Kategoriler</h2>
+            <ul class="info">
+                @foreach (var item in Model.Category)
+                {
+                    <li><a href="#">@item.Name</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="content-right">
+        <div class="banner">
+            <div class="slides">
+                <div class="slides_container">
+                    <div class="imgeslider">
+                        <img src="~/images/lapy.jpg" alt="lapy" title="product" />
+                        <div class="banner-text">
+                            <h1>Lorem Ipsum</h1>
+                            <span>Lorem Ipsum is simply</span>
+                            <p>Lorem Ipsum is simply dummy text of the printing</p>
+                            <a href="#"> Click Here <span></span></a>
+                        </div>
+                    </div>
+                    <div class="imgeslider">
+                        <img src="~/images/lapy.jpg" alt="lapy" title="product" />
+                        <div class="banner-text">
+                            <h1>Lorem Ipsum</h1>
+                            <span>Lorem Ipsum is simply</span>
+                            <p>Lorem Ipsum is simply dummy text of the printing</p>
+                            <a href="#"> Click Here <span></span></a>
+                        </div>
+                    </div>
+                    <div class="imgeslider">
+                        <img src="~/images/lapy.jpg" alt="lapy" title="product" />
+                        <div class="banner-text">
+                            <h1>Lorem Ipsum</h1>
+                            <span>Lorem Ipsum is simply</span>
+                            <p>Lorem Ipsum is simply dummy text of the printing</p>
+                            <a href="#"> Click Here <span></span></a>
+                        </div>
+                    </div>
+                    <div class="imgeslider">
+                        <img src="~/images/lapy.jpg" alt="lapy" title="product" />
+                        <div class="banner-text">
+                            <h1>Lorem Ipsum</h1>
+                            <span>Lorem Ipsum is simply</span>
+                            <p>Lorem Ipsum is simply dummy text of the printing</p>
+                            <a href="#"> Click Here <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="content-row">
+        @foreach (var item in Model.Products.Select((value, i) => new {i, value}))
+        {
+            //var value = item.value;
+            //var index = item.i;
+
+            if (item.i == 3)
+            {
+                <div class="cl"></div>
+            }
+            
+            <div class="product-info">
+                <img src="~/images/@item.value.ImagePath" alt="lapy" title="product" @*class="lapy"*@ />
+                @if (@item.value.NewProduct == true)
+                {
+                    <div class="rotatebg">&nbsp;</div>
+                    <div class="newrotate"></div>
+                }
+                <h2>@item.value.Name</h2>
+                <div class="add"><span>$@string.Format("{0:n}",@item.value.Price)      
+                    </span><a href="#">@item.value.MarkName</a></div>
+                <div class="add-to-list">
+                    <ul>
+                        <li><a href="#">@item.value.CategoryName</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</div>
