@@ -85,6 +85,7 @@
   <ItemGroup>
     <Content Include="css\all-ie.css" />
     <Content Include="css\common.css" />
+    <Content Include="css\cssb.css" />
     <Content Include="css\ie8.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\din-regular_0-webfont.svg" />
@@ -222,12 +223,19 @@
     <Compile Include="Models\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\CreateDataViewModel.cs" />
+    <Compile Include="ViewModel\CreateViewModel.cs" />
     <Compile Include="ViewModel\DataViewModel.cs" />
+    <Compile Include="ViewModel\EditDataViewModel.cs" />
+    <Compile Include="ViewModel\EditViewModel.cs" />
+    <Compile Include="ViewModel\MarkViewModel.cs" />
     <Compile Include="ViewModel\ProductsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Shop1.ViewModel
 {
-    public class DataViewModel
+    public class EditDataViewModel
     {
-        public List<ProductsViewModel> Products { get; set; }
+        public EditViewModel Edit { get; set; }
         public List<CategoryViewModel> Category { get; set; }
         public List<MarkViewModel> Mark { get; set; }
     }

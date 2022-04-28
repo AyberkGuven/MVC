@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /*==================================================
  Eric Meyer's Global CSS Reset
  ==================================================*/
@@ -117,7 +117,6 @@ z-index:55;
 	src: url('../fonts/geo703bc-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/geo703bc-webfont.woff') format('woff'),  url('../fonts/geo703bc-webfont.ttf') format('truetype'),  url('../fonts/geo703bc-webfont.svg#geoslab703_mdcn_btbold') format('svg');
 }
 /*Global declaration*/	
-
 input {
 	width: 218px;
 	background: url(../images/textbox.png) left top no-repeat;
