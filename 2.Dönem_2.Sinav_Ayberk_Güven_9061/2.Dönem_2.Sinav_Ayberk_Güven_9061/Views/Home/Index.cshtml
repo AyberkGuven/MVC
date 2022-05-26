@@ -1,0 +1,48 @@
+﻿@model _2.Dönem_2.Sinav_Ayberk_Güven_9061.ViewModel.DataViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- Sidebar ================================================== -->
+        <div id="sidebar" class="span3">
+            <ul id="sideManu" class="nav nav-tabs nav-stacked">
+                @foreach (var item in Model.CategoryViewModels)
+                {
+                    <li class="subMenu">
+                        <a>@item.Name</a>
+                    </li>
+                }
+                @*Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.*@
+            </ul>
+        </div>
+        <!-- Sidebar end=============================================== -->
+        <div class="span9">
+            <h4>Ürünlerimiz</h4>
+            <ul class="thumbnails">
+                @foreach (var item in Model.ProductViewModels)
+                {
+                    <li class="span3">
+                        <div class="thumbnail">
+                            @if (@item.NewProduct == true)
+                            {
+                                <i class="tag"></i>
+                            }
+                            <a href="#"><img src="../themes/images/products/@item.ImagePatch" alt="" /></a>
+                            <div class="caption">
+                                <h5>@item.Name</h5>
+                                <p>
+                                    Lorem Ipsum is simply dummy text.
+                                </p>
+                                <h4 style="text-align:center"><i class="icon-zoom-in">@Html.ActionLink("_", "Detail", new { id = item.Id })</i> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@item.Price</a></h4>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+

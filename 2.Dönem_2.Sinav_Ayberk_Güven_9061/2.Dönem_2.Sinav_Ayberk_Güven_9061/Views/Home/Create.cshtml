@@ -1,0 +1,55 @@
+﻿@model _2.Dönem_2.Sinav_Ayberk_Güven_9061.ViewModel.CreatDataViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Sidebar ================================================== -->
+<div id="sidebar" class="span3">
+    <ul id="sideManu" class="nav nav-tabs nav-stacked">
+        @foreach (var item in Model.CategoryViewModels)
+        {
+            <li class="subMenu">
+                <a>@item.Name</a>
+            </li>
+        }
+        @*Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.*@
+    </ul>
+</div>
+<!-- Sidebar end=============================================== -->
+@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container labelblock" style="margin-left: 25%;">
+        <h4>Yeni Ürün Kaydet</h4>
+        <div class="mb-3 mt-3">
+            <label for="Image">Image:</label>
+            @Html.TextBox("file", "", new { type = "file", @class = "form-control" })
+        </div>
+        <div class="mb-3">
+            <label for="Name">Adı:</label>
+            @Html.TextBoxFor(m => m.CreatViewModels.Name, new { @placeholder = "Adını Giriniz" })
+        </div>
+        <div class="mb-3">
+            <label for="Price">Fiyatı:</label>
+            @Html.TextBoxFor(m => m.CreatViewModels.Price, new { @placeholder = "Fiyatını Giriniz" })
+        </div>
+        <div>
+            <label for="Category">Category:</label>
+            @Html.DropDownListFor(model => model.CreatViewModels.CategoryId, new SelectList(Model.CategoryViewModels, "Id", "Name"))
+        </div>
+        <div class="mb-3">
+            <label>Ürün yeni mi?</label>
+            @Html.DropDownListFor(m => m.CreatViewModels.NewProduct, new List<SelectListItem>
+                 {
+                     new SelectListItem{Text="Evet", Value="True"},
+                     new SelectListItem{Text="Hayır", Value="False"}
+                 })
+        </div>
+        <div class="mb-3">
+            <label>Açıklama</label>
+            @Html.TextAreaFor(modelItem => Model.CreatViewModels.explanation, new { @placeholder = "Açıklamanızı Giriniz" })
+        </div>
+        <button type="submit">Kaydet</button>
+    </div>
+}
+

@@ -1,0 +1,3 @@
+D:\Laboratuar\Ortak\OGR4\Sınav 2.dönem2.sınav\2.Dönem_2.Sinav_Ayberk_Güven_9061\2.Dönem_2.Sinav_Ayberk_Güven_9061\obj\Debug\Bootstrap_Ayberk_Guven_9061.csprojResolveAssemblyReference.cache
+D:\Laboratuar\Ortak\OGR4\Sınav 2.dönem2.sınav\2.Dönem_2.Sinav_Ayberk_Güven_9061\2.Dönem_2.Sinav_Ayberk_Güven_9061\obj\Debug\2.Dönem_2.Sinav_Ayberk_Güven_9061.dll
+D:\Laboratuar\Ortak\OGR4\Sınav 2.dönem2.sınav\2.Dönem_2.Sinav_Ayberk_Güven_9061\2.Dönem_2.Sinav_Ayberk_Güven_9061\obj\Debug\2.Dönem_2.Sinav_Ayberk_Güven_9061.pdb
